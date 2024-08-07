@@ -12,7 +12,7 @@ export const generateClient = async (app: INestApplication) => {
     {
       webServerOptions: {
         enabled: true,
-        path: 'api-docs',
+        path: '/',
       },
       fileGeneratorOptions: {
         enabled: true,

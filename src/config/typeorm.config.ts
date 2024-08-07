@@ -1,10 +1,11 @@
 import { DataSource, DataSourceOptions } from 'typeorm';
 import { ConfigService } from '@nestjs/config';
+import { Contact } from 'src/indentity/entities';
 
 const commonTypeOrmConfig: DataSourceOptions = {
   logging: true,
   type: 'postgres',
-  entities: [],
+  entities: [Contact],
   synchronize: false,
   ssl: true,
   extra: {

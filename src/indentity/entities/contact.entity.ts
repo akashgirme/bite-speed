@@ -10,9 +10,9 @@ import { LinkPrecedence } from '../enum';
 
 @Entity()
 export class Contact {
-  @ApiProperty()
+  @ApiProperty({ type: 'integer' })
   @PrimaryGeneratedColumn('increment')
-  id: string;
+  id: number;
 
   @ApiProperty()
   @Column({ nullable: true })
