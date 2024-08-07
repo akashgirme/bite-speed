@@ -4,7 +4,7 @@
 
   <p align="center">Nest.js is progressive Node.js framework for building efficient and scalable server-side applications.</p>
 
-## How to Run Code
+## How to use the application
 
 1. Visit the application url
 2. Expand the API route you want to try
