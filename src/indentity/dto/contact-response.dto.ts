@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 
-export class ContactResponseDto {
+export class ContactDto {
   @ApiProperty()
   primaryContactId: number;
 
@@ -12,4 +12,9 @@ export class ContactResponseDto {
 
   @ApiProperty({ type: [Number] })
   secondaryContactIds: number[];
+}
+
+export class ContactResponseDto {
+  @ApiProperty({ type: () => ContactDto })
+  contact: ContactDto;
 }

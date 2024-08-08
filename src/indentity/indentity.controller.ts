@@ -10,9 +10,7 @@ export class IndentityController {
 
   @Post('/')
   @ApiOkResponse({ type: () => ContactResponseDto })
-  createContact(
-    @Body() body: CreateContactDto,
-  ): Promise<{ contact: ContactResponseDto }> {
+  createContact(@Body() body: CreateContactDto): Promise<ContactResponseDto> {
     return this.indentityService.createContact(body);
   }
 

@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { ContactResponseDto, CreateContactDto } from './dto';
+import { ContactDto, ContactResponseDto, CreateContactDto } from './dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Contact } from './entities';
 import { Repository } from 'typeorm';
@@ -14,7 +14,7 @@ export class IndentityService {
   async createContact({
     email,
     phoneNumber,
-  }: CreateContactDto): Promise<{ contact: ContactResponseDto }> {
+  }: CreateContactDto): Promise<ContactResponseDto> {
     const contact = this.contactRepo.create({
       email,
       phoneNumber,
@@ -81,7 +81,7 @@ export class IndentityService {
       secondaryContactIds.push(contact.id);
     });
 
-    const contact: ContactResponseDto = {
+    const contact: ContactDto = {
       primaryContactId: primaryContact.id,
       emails: Array.from(emails).filter(Boolean),
       phoneNumbers: Array.from(phoneNumbers).filter(Boolean),
